@@ -16,7 +16,9 @@ public class MenuSceneSetup
     private static void ApplyPendingSetup()
     {
         if (Application.isBatchMode || (!File.Exists("Temp/MenuSetup.request") && !File.Exists("Temp/MenuTypography.request")))
+        {
             return;
+        }
 
         EditorApplication.delayCall += () =>
         {
@@ -32,6 +34,7 @@ public class MenuSceneSetup
                 File.Delete("Temp/MenuTypography.request");
                 return;
             }
+
             Create();
             File.Delete("Temp/MenuSetup.request");
         };
@@ -51,7 +54,9 @@ public class MenuSceneSetup
         var font = LoadMenuFont();
         var scene = SceneManager.GetSceneByPath("Assets/Scenes/Menu.unity");
         if (!scene.isLoaded)
+        {
             scene = EditorSceneManager.OpenScene("Assets/Scenes/Menu.unity", OpenSceneMode.Additive);
+        }
         SceneManager.SetActiveScene(scene);
         if (System.Array.Exists(scene.GetRootGameObjects(), root => root.name == "Menu Canvas"))
         {
@@ -122,7 +127,9 @@ public class MenuSceneSetup
         const string path = "Assets/_Game/Art/Fonts/LilitaOne SDF.asset";
         var font = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(path);
         if (font != null)
+        {
             return font;
+        }
 
         var source = AssetDatabase.LoadAssetAtPath<Font>("Assets/_Game/Art/Fonts/LilitaOne-Regular.ttf");
         font = TMP_FontAsset.CreateFontAsset(source);
@@ -132,7 +139,9 @@ public class MenuSceneSetup
         AssetDatabase.CreateAsset(font, path);
         AssetDatabase.AddObjectToAsset(font.material, font);
         foreach (var texture in font.atlasTextures)
+        {
             AssetDatabase.AddObjectToAsset(texture, font);
+        }
         EditorUtility.SetDirty(font);
         AssetDatabase.SaveAssets();
         return font;
@@ -143,20 +152,25 @@ public class MenuSceneSetup
         var font = LoadMenuFont();
         var scene = SceneManager.GetSceneByPath("Assets/Scenes/Menu.unity");
         if (!scene.isLoaded)
-            scene = EditorSceneManager.OpenScene("Assets/Scenes/Menu.unity", OpenSceneMode.Additive);
-        foreach (var root in scene.GetRootGameObjects())
-        foreach (var label in root.GetComponentsInChildren<TextMeshProUGUI>(true))
         {
-            label.font = font;
-            label.fontSharedMaterial = font.material;
-            label.fontStyle = FontStyles.Normal;
-            if (label.name == "Title")
+            scene = EditorSceneManager.OpenScene("Assets/Scenes/Menu.unity", OpenSceneMode.Additive);
+        }
+        foreach (var root in scene.GetRootGameObjects())
+        {
+            foreach (var label in root.GetComponentsInChildren<TextMeshProUGUI>(true))
             {
-                label.text = "SEASIDE\nWORKSHOP";
-                label.color = new Color32(24, 89, 96, 255);
+                label.font = font;
+                label.fontSharedMaterial = font.material;
+                label.fontStyle = FontStyles.Normal;
+                if (label.name == "Title")
+                {
+                    label.text = "SEASIDE\nWORKSHOP";
+                    label.color = new Color32(24, 89, 96, 255);
+                }
+
+                label.ForceMeshUpdate();
+                EditorUtility.SetDirty(label);
             }
-            label.ForceMeshUpdate();
-            EditorUtility.SetDirty(label);
         }
         EditorSceneManager.MarkSceneDirty(scene);
         EditorSceneManager.SaveScene(scene);

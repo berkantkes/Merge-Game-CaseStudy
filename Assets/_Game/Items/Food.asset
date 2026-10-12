@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d72c59edfff7b48b457497aa664686, type: 3}
+  m_Name: Food
+  m_EditorClassIdentifier: 
+  itemType: 1
+  levels:
+  - displayName: Orange
+    sprite: {fileID: 21300000, guid: b636742dba2838e42bfca715f28c5bc3, type: 3}
+  - displayName: Orange Juice
+    sprite: {fileID: 21300000, guid: 183899733bf71634f83d32216cd2a63a, type: 3}
+  - displayName: Fruit Plate
+    sprite: {fileID: 21300000, guid: dbff0b9ac08b1244c83bc0082e3a13f1, type: 3}
+  - displayName: Cake
+    sprite: {fileID: 21300000, guid: 67a5e3e80d0d58c42ac786fbbb22bb57, type: 3}
+  - displayName: Picnic Basket
+    sprite: {fileID: 21300000, guid: 47ba0cbddfe69d14d9a11f063e091ec8, type: 3}

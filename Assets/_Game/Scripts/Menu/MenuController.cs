@@ -1,7 +1,7 @@
 using MergeGame.Progression;
+using MergeGame.Loading;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace MergeGame.Menu
 {
@@ -23,7 +23,7 @@ namespace MergeGame.Menu
 
         public void Play()
         {
-            SceneManager.LoadScene("Game");
+            SceneLoader.Load("Game");
         }
     }
 }

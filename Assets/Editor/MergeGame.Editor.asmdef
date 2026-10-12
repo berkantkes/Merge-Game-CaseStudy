@@ -1,0 +1,6 @@
+{
+  "name": "MergeGame.Editor",
+  "references": ["MergeGame.Runtime", "UnityEngine.UI", "Unity.TextMeshPro", "Unity.InputSystem"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}
