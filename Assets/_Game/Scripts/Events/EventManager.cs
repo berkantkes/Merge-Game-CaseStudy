@@ -1,7 +1,5 @@
 using System;
 using MergeGame.Board;
-using MergeGame.Items;
-using MergeGame.LevelEditor;
 
 namespace MergeGame.Events
 {
@@ -18,7 +16,5 @@ namespace MergeGame.Events
         public static Action BoardInteractionCancelled;
         public static Action<bool> BoardInteractionBusyChanged;
         public static Action<int, int> CellPressed;
-        public static Action<ItemStack> ItemSelected;
-        public static Action<LevelEditorAction> EditorActionRequested;
     }
 }
