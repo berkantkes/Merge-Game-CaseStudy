@@ -12,30 +12,10 @@ namespace MergeGame.Levels
         [SerializeField, Min(0)] private float columnSpacing = 6;
         [SerializeField] private List<CellPlacement> placements = new List<CellPlacement>();
 
-        public int Rows
-        {
-            get => rows;
-            set => rows = value;
-        }
-
-        public int Columns
-        {
-            get => columns;
-            set => columns = value;
-        }
-
-        public float RowSpacing
-        {
-            get => rowSpacing;
-            set => rowSpacing = value;
-        }
-
-        public float ColumnSpacing
-        {
-            get => columnSpacing;
-            set => columnSpacing = value;
-        }
-
-        public List<CellPlacement> Placements => placements;
+        public int Rows => rows;
+        public int Columns => columns;
+        public float RowSpacing => rowSpacing;
+        public float ColumnSpacing => columnSpacing;
+        public IReadOnlyList<CellPlacement> Placements => placements;
     }
 }

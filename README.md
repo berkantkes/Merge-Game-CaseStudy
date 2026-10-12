@@ -6,7 +6,7 @@ The required 2D artwork was generated with AI.
 
 RUN
 
-Open with Unity 6000.0.58f2 and play Assets/Scenes/Loading.unity. The project uses Built-in 2D and uGUI.
+Open with Unity 6000.0.58f2 and play Assets/_Game/Scenes/Loading.unity. The project uses Built-in 2D and uGUI.
 
 Spawn adds a random level 1 item to an empty cell. Matching items merge and give points. The MAX badge marks the last level. Restart clears the board and score.
 
@@ -28,7 +28,7 @@ I chose ScriptableObjects to edit content in the Inspector instead of hardcoding
 
 To add a chain, add a unique ItemType value and a chain asset to the catalog. Keep existing enum values unchanged. The first reward is zero and later rewards increase. Extra levels only need new entries in the chain.
 
-LevelDataSO stores dimensions and starting items. Edit Assets/_Game/Levels/Level 01.asset for board setup. The game creates a separate BoardState so playing does not change the asset.
+LevelDataSO stores dimensions and starting items. Edit Assets/_Game/Data/Levels/Level 01.asset for board setup. The game creates a separate BoardState so playing does not change the asset.
 
 PATTERNS AND DEPENDENCIES
 

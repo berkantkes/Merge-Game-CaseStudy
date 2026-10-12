@@ -21,13 +21,7 @@ namespace MergeGame.Board
 
         private Tween bumpTween;
 
-        public RectTransform ItemTransform
-        {
-            get
-            {
-                return icon.rectTransform;
-            }
-        }
+        public RectTransform ItemTransform => icon.rectTransform;
 
         public void Initialize(int row, int column)
         {

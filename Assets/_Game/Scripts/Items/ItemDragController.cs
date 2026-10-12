@@ -128,7 +128,7 @@ namespace MergeGame.Items
 
         private void CompleteDrop()
         {
-            RefreshAffectedCells();
+            boardView.RefreshCell(startCellPosition.y, startCellPosition.x);
             boardView.ClearDropTarget();
             selectedCellPosition = endCellPosition;
             if (dropResult == DropResult.Move || dropResult == DropResult.Merge)

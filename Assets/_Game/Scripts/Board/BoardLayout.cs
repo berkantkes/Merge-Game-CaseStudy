@@ -11,13 +11,7 @@ namespace MergeGame.Board
         private readonly Vector2 padding;
         private readonly Vector2 size;
 
-        public Vector2 Size
-        {
-            get
-            {
-                return size;
-            }
-        }
+        public Vector2 Size => size;
 
         public BoardLayout(int rows, int columns, Vector2 cellSize, Vector2 spacing, RectOffset padding)
         {

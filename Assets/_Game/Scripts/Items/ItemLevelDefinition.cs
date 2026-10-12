@@ -11,12 +11,6 @@ namespace MergeGame.Items
         [SerializeField, Min(0)] private int mergeScore;
         public string DisplayName => displayName;
         public Sprite Sprite => sprite;
-        public int MergeScore
-        {
-            get
-            {
-                return mergeScore;
-            }
-        }
+        public int MergeScore => mergeScore;
     }
 }

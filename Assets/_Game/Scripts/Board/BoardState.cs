@@ -9,21 +9,8 @@ namespace MergeGame.Board
     {
         private readonly ItemStack[,] cells;
         private readonly IBoardDropRules dropRules;
-        public int Rows
-        {
-            get
-            {
-                return cells.GetLength(0);
-            }
-        }
-
-        public int Columns
-        {
-            get
-            {
-                return cells.GetLength(1);
-            }
-        }
+        public int Rows => cells.GetLength(0);
+        public int Columns => cells.GetLength(1);
 
         private BoardState(int rows, int columns, IBoardDropRules dropRules)
         {
