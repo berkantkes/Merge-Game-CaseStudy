@@ -585,9 +585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SEASIDE
-
-    WORKSHOP'
+  m_text: MERGE GAME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fc21d7cd0d9cf1a499856a6b1b562988, type: 2}
   m_sharedMaterial: {fileID: -8904845491977030978, guid: fc21d7cd0d9cf1a499856a6b1b562988, type: 2}
@@ -909,6 +907,7 @@ Material:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 3100000001}
   - {fileID: 2300000001}
   - {fileID: 519420032}
   - {fileID: 350186866}
@@ -931,4 +930,22 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1b5069154a0a4df98f07b4856ebea5f9, type: 3}
   m_PrefabInstance: {fileID: 2300000000}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3100000000
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b1dc6143ca85483995ce09f9c88bf644, type: 3}
+--- !u!224 &3100000001 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224000, guid: b1dc6143ca85483995ce09f9c88bf644, type: 3}
+  m_PrefabInstance: {fileID: 3100000000}
   m_PrefabAsset: {fileID: 0}

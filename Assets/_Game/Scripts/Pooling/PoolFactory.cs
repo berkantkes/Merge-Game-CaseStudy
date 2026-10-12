@@ -30,7 +30,7 @@ namespace MergeGame.Pooling
                 }
                 if (definition.prefab == null)
                 {
-                    Debug.LogError("Pool prefab is missing.");
+                    Debug.LogError("missing pool prefab");
                     continue;
                 }
                 var root = new GameObject(definition.type.ToString()).transform;
@@ -46,7 +46,7 @@ namespace MergeGame.Pooling
             bool found = pools.TryGetValue(type, out var pool);
             if (!found)
             {
-                Debug.LogError("Pool is missing.");
+                Debug.LogError("missing pool");
                 return null;
             }
             return (T)pool.Get(parent);

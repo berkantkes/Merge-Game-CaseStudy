@@ -43,7 +43,7 @@ namespace MergeGame.Game
         {
             if (boardView == null || gameView == null)
             {
-                Debug.LogError("Game references are missing.");
+                Debug.LogError("missing game references");
                 return;
             }
             var dropRules = new BoardDropRules(catalog);

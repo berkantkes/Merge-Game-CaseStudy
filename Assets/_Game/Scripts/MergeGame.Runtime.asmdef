@@ -3,7 +3,8 @@
   "references": [
     "UnityEngine.UI",
     "Unity.TextMeshPro",
-    "DOTween.Modules"
+    "DOTween.Modules",
+    "UniTask"
   ],
   "autoReferenced": true
 }

@@ -40,32 +40,32 @@ namespace MergeGame.Items
             error = null;
             if (chains.Count == 0)
             {
-                error = "Catalog is empty.";
+                error = "empty catalog";
             }
             var types = new HashSet<ItemType>();
             foreach (var chain in chains)
             {
                 if (chain == null)
                 {
-                    error = "Item chain is missing.";
+                    error = "missing chain";
                     break;
                 }
 
                 if (chain.Type == ItemType.None || !Enum.IsDefined(typeof(ItemType), chain.Type))
                 {
-                    error = "Item type is invalid.";
+                    error = "invalid item type";
                     break;
                 }
 
                 if (!types.Add(chain.Type))
                 {
-                    error = "Item type is duplicated.";
+                    error = "duplicate item type";
                     break;
                 }
 
                 if (chain.MaxLevel == 0)
                 {
-                    error = "Item chain is empty.";
+                    error = "empty chain";
                     break;
                 }
 
@@ -73,13 +73,13 @@ namespace MergeGame.Items
                 {
                     if (level == null || string.IsNullOrWhiteSpace(level.DisplayName))
                     {
-                        error = "Item name is missing.";
+                        error = "missing item name";
                         break;
                     }
 
                     if (level.Sprite == null)
                     {
-                        error = "Item sprite is missing.";
+                        error = "missing item sprite";
                         break;
                     }
                 }
@@ -91,7 +91,7 @@ namespace MergeGame.Items
                 bool validScores = ValidateMergeScores(chain);
                 if (!validScores)
                 {
-                    error = "Merge scores must increase with each level.";
+                    error = "invalid merge scores";
                     break;
                 }
             }

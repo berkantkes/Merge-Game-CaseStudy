@@ -10,7 +10,7 @@ namespace MergeGame.Levels
         {
             if (data == null)
             {
-                error = "Level data is missing.";
+                error = "missing level data";
                 return false;
             }
             if (!ValidateSize(data.Rows, data.Columns, data.RowSpacing, data.ColumnSpacing, out error))
@@ -19,7 +19,7 @@ namespace MergeGame.Levels
             }
             if (catalog == null)
             {
-                error = "Item catalog is missing.";
+                error = "missing catalog";
                 return false;
             }
             if (!catalog.TryValidate(out error))
@@ -31,19 +31,19 @@ namespace MergeGame.Levels
             {
                 if (!Contains(data, placement.Row, placement.Column))
                 {
-                    error = "Item is outside the board.";
+                    error = "item outside board";
                     return false;
                 }
 
                 if (!occupied.Add(new Vector2Int(placement.Row, placement.Column)))
                 {
-                    error = "Cell has multiple items.";
+                    error = "multiple items in cell";
                     return false;
                 }
 
                 if (placement.Item.IsEmpty || !catalog.TryGet(placement.Item.Type, placement.Item.Level, out _))
                 {
-                    error = "Item type or level is invalid.";
+                    error = "invalid item type or level";
                     return false;
                 }
             }
@@ -55,11 +55,11 @@ namespace MergeGame.Levels
             error = null;
             if (rows < 1 || columns < 1)
             {
-                error = "Rows and columns must be at least 1.";
+                error = "invalid board size";
             }
             else if (float.IsNaN(rowSpacing) || float.IsInfinity(rowSpacing) || rowSpacing < 0 || float.IsNaN(columnSpacing) || float.IsInfinity(columnSpacing) || columnSpacing < 0)
             {
-                error = "Spacing must be a finite positive value or zero.";
+                error = "invalid spacing";
             }
             return error == null;
         }

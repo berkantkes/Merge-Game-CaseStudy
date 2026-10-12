@@ -31,7 +31,7 @@ namespace MergeGame.Board
         {
             if (gridRect == null || poolFactory == null)
             {
-                Debug.LogError("Board references are missing.");
+                Debug.LogError("missing board references");
                 return false;
             }
 
@@ -128,7 +128,8 @@ namespace MergeGame.Board
             }
             var item = boardState.GetCell(row, column);
             itemCatalog.TryGet(item.Type, item.Level, out var definition);
-            cellVisuals[row, column].ShowItem(definition);
+            bool isMaxLevel = !item.IsEmpty && item.Level == itemCatalog.GetMaxLevel(item.Type);
+            cellVisuals[row, column].ShowItem(definition, isMaxLevel);
         }
 
         public void PlayItemArrival(int row, int column)

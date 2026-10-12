@@ -91,7 +91,7 @@ namespace MergeGame.LevelEditor
             var poolFactory = PoolFactory.Instance;
             if (poolFactory == null || palette == null)
             {
-                Debug.LogError("Palette references are missing.");
+                Debug.LogError("missing palette references");
                 return;
             }
             poolFactory.Initialize();

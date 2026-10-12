@@ -10,6 +10,7 @@ namespace MergeGame.Board
     {
         [SerializeField] private GameObject alternateBackground;
         [SerializeField] private Image icon;
+        [SerializeField] private GameObject maxLevelBadge;
         [SerializeField] private GameObject selection;
         [SerializeField] private GameObject validTarget;
         [SerializeField] private GameObject invalidTarget;
@@ -40,6 +41,7 @@ namespace MergeGame.Board
             ClearTarget();
             icon.sprite = null;
             icon.gameObject.SetActive(false);
+            maxLevelBadge.SetActive(false);
             alternateBackground.SetActive(false);
         }
 
@@ -69,11 +71,12 @@ namespace MergeGame.Board
             icon.gameObject.SetActive(visible);
         }
 
-        public void ShowItem(ItemLevelDefinition definition)
+        public void ShowItem(ItemLevelDefinition definition, bool isMaxLevel)
         {
             StopBump();
             bool visible = definition != null;
             icon.gameObject.SetActive(visible);
+            maxLevelBadge.SetActive(visible && isMaxLevel);
             if (!visible)
             {
                 return;

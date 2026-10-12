@@ -17,7 +17,7 @@ namespace MergeGame.Game
             bool found = catalog.TryGet(mergedItem.Type, mergedItem.Level, out var definition);
             if (!found)
             {
-                Debug.LogError("Merge item is missing.");
+                Debug.LogError("missing merge item");
                 return 0;
             }
             return definition.MergeScore;

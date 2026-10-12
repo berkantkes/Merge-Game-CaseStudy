@@ -81,16 +81,12 @@ public class MenuSceneSetup
         fitter.aspectMode = AspectRatioFitter.AspectMode.EnvelopeParent;
         fitter.aspectRatio = backgroundImage.sprite.rect.width / backgroundImage.sprite.rect.height;
 
-        var title = Label("Title", canvasObject.transform, "SEASIDE\nWORKSHOP", font, 100);
+        var title = Label("Title", canvasObject.transform, "MERGE GAME", font, 100);
         Place(title.rectTransform, new Vector2(.5f, .76f), new Vector2(950, 260));
         title.color = new Color32(24, 89, 96, 255);
 
         var controls = Rect("Play Area", canvasObject.transform);
         Place(controls, new Vector2(.5f, .28f), new Vector2(780, 390));
-        var level = Label("Level", controls, "LEVEL 1", font, 44);
-        Place(level.rectTransform, new Vector2(.5f, .86f), new Vector2(600, 75));
-        level.color = new Color32(24, 89, 96, 255);
-        level.fontStyle = FontStyles.Normal;
 
         var buttonRect = Rect("Play Button", controls);
         Place(buttonRect, new Vector2(.5f, .45f), new Vector2(780, 280));
@@ -110,9 +106,6 @@ public class MenuSceneSetup
         label.color = new Color32(255, 249, 230, 255);
 
         var controller = new GameObject("Menu Controller").AddComponent<MenuController>();
-        var serialized = new SerializedObject(controller);
-        serialized.FindProperty("levelText").objectReferenceValue = level;
-        serialized.ApplyModifiedPropertiesWithoutUndo();
         UnityEventTools.AddPersistentListener(button.onClick, controller.Play);
 
         new GameObject("EventSystem", typeof(EventSystem), typeof(InputSystemUIInputModule));
@@ -164,7 +157,7 @@ public class MenuSceneSetup
                 label.fontStyle = FontStyles.Normal;
                 if (label.name == "Title")
                 {
-                    label.text = "SEASIDE\nWORKSHOP";
+                    label.text = "MERGE GAME";
                     label.color = new Color32(24, 89, 96, 255);
                 }
 

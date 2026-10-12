@@ -1,0 +1,6 @@
+UniTask 2.5.10, embedded UPM package.
+Source: https://github.com/Cysharp/UniTask
+Cached revision: 73a63b7f672b88f7e9992f6917eb458a8cbb6fa9
+Copied from the existing pixel-hole-3 package cache because GitHub access was unavailable.
+Includes the cached DOTween assembly reference to DOTween.Modules.
+License: MIT; see LICENSE.md.
