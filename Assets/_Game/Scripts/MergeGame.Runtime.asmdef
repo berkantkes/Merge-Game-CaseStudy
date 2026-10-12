@@ -1,5 +1,9 @@
 {
   "name": "MergeGame.Runtime",
-  "references": ["UnityEngine.UI", "Unity.TextMeshPro"],
+  "references": [
+    "UnityEngine.UI",
+    "Unity.TextMeshPro",
+    "DOTween.Modules"
+  ],
   "autoReferenced": true
 }

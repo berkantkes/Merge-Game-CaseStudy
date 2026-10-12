@@ -16,11 +16,16 @@ MonoBehaviour:
   levels:
   - displayName: Cloth
     sprite: {fileID: 21300000, guid: 58c690ca17b49fb42ac6024d2c81ef75, type: 3}
+    mergeScore: 0
   - displayName: Brush
     sprite: {fileID: 21300000, guid: 887d38463d41aae46995fc161c2b4980, type: 3}
+    mergeScore: 10
   - displayName: Hammer
     sprite: {fileID: 21300000, guid: 63ac90716f7388b42adb5ec2ce481741, type: 3}
+    mergeScore: 25
   - displayName: Toolbox
     sprite: {fileID: 21300000, guid: b593c9f96e01e4d4bb2519cacaf91e2c, type: 3}
+    mergeScore: 60
   - displayName: Workbench
     sprite: {fileID: 21300000, guid: dfdaf204a6ed3ec428a44e3508365a52, type: 3}
+    mergeScore: 150

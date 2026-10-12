@@ -10,7 +10,7 @@ namespace MergeGame.Loading
         {
             yield return null;
             PoolFactory.Instance.Initialize(); 
-            yield return SceneLoader.Load("Menu");
+            yield return SceneLoader.Load(Constants.SceneNames.Menu);
         }
     }
 }

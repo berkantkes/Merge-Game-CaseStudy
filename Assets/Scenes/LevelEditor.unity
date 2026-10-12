@@ -448,10 +448,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardArea: {fileID: 101400843}
-  grid: {fileID: 2300000011}
+  gridRect: {fileID: 2300000011}
   boardInput: {fileID: 2300000012}
   gridLayout: {fileID: 2300000013}
-  maximumSize: {x: 960, y: 960}
+  maxBoardSize: {x: 960, y: 960}
 --- !u!1 &167906996
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,6 @@
+Tool: OpenAI built-in imagegen
+Output: score-panel.png
+Transparent background: true
+
+Prompt:
+Create ONE production-ready 2D mobile game UI sprite: a simple understated blank score panel for a cozy seaside merge game. Wide horizontal rounded rectangle, approximately 3:1 width to height, perfectly front-on orthographic, symmetric. Warm ivory cream opaque empty center, thin muted turquoise outline, very subtle soft bevel and tiny soft shadow immediately below. Calm polished casual game UI, smooth clean edges, low visual noise, matte look. Center must be completely blank and evenly colored for dark turquoise score digits added by Unity later. No text, no numbers, no icons, no seashells, no illustrations, no decorative ornaments, no scene, no mockup. Actual transparent alpha outside the panel, no checkerboard baked into pixels. Panel fills almost the entire wide image with only a small transparent safety margin. A single isolated panel, not a sprite sheet. Save the generated output as an image asset.

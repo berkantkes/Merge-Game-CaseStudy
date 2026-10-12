@@ -208,7 +208,8 @@ namespace MergeGame.EditorTools
             {
                 return;
             }
-            var next = BoardState.Create(draft, view.Catalog);
+            var dropRules = new BoardDropRules(view.Catalog);
+            var next = BoardState.Create(draft, view.Catalog, dropRules);
             if (next == null)
             {
                 view.ShowStatus("Board could not be created. Check the Console.", true);
@@ -248,7 +249,8 @@ namespace MergeGame.EditorTools
         private float lastRowGap, lastColumnGap;
         private void RefreshBoard()
         {
-            state = BoardState.Create(draft, view.Catalog);
+            var dropRules = new BoardDropRules(view.Catalog);
+            state = BoardState.Create(draft, view.Catalog, dropRules);
             if (state == null)
             {
                 view.ShowStatus("Board could not be created. Check the Console.", true);

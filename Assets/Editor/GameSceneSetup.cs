@@ -147,7 +147,7 @@ public class GameSceneSetup
         serialized.ApplyModifiedPropertiesWithoutUndo();
         var boardData = new SerializedObject(board);
         boardData.FindProperty("boardArea").objectReferenceValue = board.GetComponent<RectTransform>();
-        var gridProperty = boardData.FindProperty("grid");
+        var gridProperty = boardData.FindProperty("gridRect");
         if (gridProperty.objectReferenceValue == null)
         {
             var prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/_Game/Prefabs/Board Grid.prefab");

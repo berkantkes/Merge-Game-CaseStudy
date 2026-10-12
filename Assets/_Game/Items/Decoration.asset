@@ -16,11 +16,16 @@ MonoBehaviour:
   levels:
   - displayName: Seashell
     sprite: {fileID: 21300000, guid: 0816c26bc389fb84e92b268eb112d69d, type: 3}
+    mergeScore: 0
   - displayName: Candle
     sprite: {fileID: 21300000, guid: d0bdc30b602bcd24087a32590f4ad8ac, type: 3}
+    mergeScore: 10
   - displayName: Lantern
     sprite: {fileID: 21300000, guid: f4f9428a1ed02be449c1fa099c154cdb, type: 3}
+    mergeScore: 25
   - displayName: Flower Pot
     sprite: {fileID: 21300000, guid: eea4256b19f8c8240aa47b85aa32e9e1, type: 3}
+    mergeScore: 60
   - displayName: Beach Umbrella
     sprite: {fileID: 21300000, guid: 5c64c302fd6b5db4fbe07175865381c0, type: 3}
+    mergeScore: 150

@@ -10,6 +10,18 @@ namespace MergeGame.Items
         [SerializeField] private List<ItemChainSO> chains = new List<ItemChainSO>();
         public IReadOnlyList<ItemChainSO> Chains => chains;
 
+        public int GetMaxLevel(ItemType type)
+        {
+            foreach (var chain in chains)
+            {
+                if (chain != null && chain.Type == type)
+                {
+                    return chain.MaxLevel;
+                }
+            }
+            return 0;
+        }
+
         public bool TryGet(ItemType type, int level, out ItemLevelDefinition definition)
         {
             foreach (var chain in chains)
@@ -76,8 +88,30 @@ namespace MergeGame.Items
                 {
                     break;
                 }
+                bool validScores = ValidateMergeScores(chain);
+                if (!validScores)
+                {
+                    error = "Merge scores must increase with each level.";
+                    break;
+                }
             }
             return error == null;
+        }
+
+        private bool ValidateMergeScores(ItemChainSO chain)
+        {
+            if (chain.Levels[0].MergeScore != 0)
+            {
+                return false;
+            }
+            for (int index = 1; index < chain.Levels.Count; index++)
+            {
+                if (chain.Levels[index].MergeScore <= chain.Levels[index - 1].MergeScore)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

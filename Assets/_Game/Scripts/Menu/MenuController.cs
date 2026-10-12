@@ -23,7 +23,7 @@ namespace MergeGame.Menu
 
         public void Play()
         {
-            SceneLoader.Load("Game");
+            SceneLoader.Load(Constants.SceneNames.Game);
         }
     }
 }
